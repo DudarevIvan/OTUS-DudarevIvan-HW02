@@ -13,6 +13,7 @@ import FootballNetworking
 struct ContentView: View {
     
     @ObservedObject var footballViewModel: FootballViewModel = .init()
+    @ObservedObject var archiveViewModel: ArchiveViewModel = .init()
     
     var body: some View {
         List(footballViewModel.items) { item in
@@ -44,5 +45,19 @@ final class FootballViewModel: ObservableObject {
             self.isPageLoading = false
         }
     }
+}
+
+final class ArchiveViewModel: ObservableObject {
     
+    @Published private(set) var items: [Country] = .init()
+    @Published private(set) var page: Int = 0
+    @Published private(set) var isPageLoading: Bool = false
+    
+    func loadPage() {
+        guard isPageLoading == false else {
+            return
+        }
+        isPageLoading = true
+        page += 1
+    }
 }

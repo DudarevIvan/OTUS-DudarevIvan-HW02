@@ -12,13 +12,12 @@ open class ArchiveAPI {
      Get Archive
      
      - parameter url: (query) Archive 
-     - parameter country: (query) Country 
      - parameter page: (query) Paging 
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getFootballArchive(url: String, country: String, page: Int, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: Archive?, _ error: Error?) -> Void)) {
-        getFootballArchiveWithRequestBuilder(url: url, country: country, page: page).execute(apiResponseQueue) { result -> Void in
+    open class func getFootballArchive(url: String, page: Int, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: Archive?, _ error: Error?) -> Void)) {
+        getFootballArchiveWithRequestBuilder(url: url, page: page).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -32,11 +31,10 @@ open class ArchiveAPI {
      Get Archive
      - GET /api/
      - parameter url: (query) Archive 
-     - parameter country: (query) Country 
      - parameter page: (query) Paging 
      - returns: RequestBuilder<Archive> 
      */
-    open class func getFootballArchiveWithRequestBuilder(url: String, country: String, page: Int) -> RequestBuilder<Archive> {
+    open class func getFootballArchiveWithRequestBuilder(url: String, page: Int) -> RequestBuilder<Archive> {
         let path = "/api/"
         let URLString = OpenAPIClientAPI.basePath + path
         let parameters: [String: Any]? = nil
@@ -44,7 +42,6 @@ open class ArchiveAPI {
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
             "url": url.encodeToJSON(),
-            "country": country.encodeToJSON(),
             "page": page.encodeToJSON(),
         ])
 
