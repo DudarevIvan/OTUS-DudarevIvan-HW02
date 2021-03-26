@@ -1,0 +1,97 @@
+openapi: 3.0.3
+info:
+  title: Football Networking
+  description: 'Football Networking'
+  version: 1.0.0
+externalDocs:
+  description: API Root
+  url: https://www.wellwin-app.com/data/football/main
+servers:
+- url: https://www.wellwin-app.com/data/football/main
+tags:
+- name: football
+  description: Football
+paths:
+  /api/:
+    get:
+      tags:
+      - football
+      summary: Get Football List
+      operationId: getFootballList  
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Football'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorModel'
+components:
+  schemas:
+    Football:
+      type: object
+      properties:
+        countries:
+          type: array
+          items:
+            $ref: "#/components/schemas/Country"
+    Country:
+      type: object
+      required:
+        - href
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        flag:
+          type: string
+        leagues:
+          type: array
+          items:
+            $ref: "#/components/schemas/Leagues"
+    Leagues:
+      type: object
+      required:
+        - href
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        icon:
+          type: string
+        seasons:
+          type: array
+          items:
+            $ref: "#/components/schemas/Seasons"
+    Seasons:
+      type: object
+      required:
+        - href
+      properties:
+        id:
+          type: integer
+        season:
+          type: string
+        pageCount:
+          type: integer
+        archive:
+          type: string
+    ErrorModel:
+      type: object
+      required:
+      - message
+      - code
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          minimum: 100
+          maximum: 600

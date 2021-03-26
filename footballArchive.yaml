@@ -1,0 +1,1461 @@
+openapi: 3.0.3
+info:
+  title: Football Archive Networking
+  description: 'Football Archive Networking'
+  version: 1.0.0
+externalDocs:
+  description: API Root
+  url: https://www.wellwin-app.com/data/football/
+servers:
+- url: https://www.wellwin-app.com/data/football/
+tags:
+- name: archive
+  description: Archive
+paths:
+  /api/:
+    get:
+      tags:
+      - archive
+      summary: Get Archive
+      operationId: getFootballArchive
+      parameters:
+        - name: url
+          in: query
+          description: Archive
+          required: true
+          schema:
+            type: string
+        - name: country
+          in: query
+          description: Country
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: Paging
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Archive'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorModel'
+components:
+  schemas:
+    Archive:
+      type: object
+      required:
+        - href
+      properties:
+        page:
+          type: integer
+        country:
+          type: string
+        league:
+          type: string
+        bookmaker:
+          type: string
+        season:
+          type: string
+        championship:
+          type: string
+        data:
+          type: array
+          items:
+            type: string
+        time:
+          type: array
+          items:
+            type: string
+        ht:
+          type: array
+          items:
+            type: string
+        at:
+          type: array
+          items:
+            type: string
+        referee:
+          type: array
+          items:
+            type: string
+        round:
+          type: array
+          items:
+            type: string
+        ht_goals_count_1half:
+          type: array
+          items:
+            type: integer
+        at_goals_count_1half:
+          type: array
+          items:
+            type: integer
+        win_1half:
+          type: array
+          items:
+            type: string
+        ht_goals_count_2half:
+          type: array
+          items:
+            type: integer
+        at_goals_count_2half:
+          type: array
+          items:
+            type: integer
+        win_2half:
+          type: array
+          items:
+            type: string
+        ht_goals_count_ft:
+          type: array
+          items:
+            type: integer
+        at_goals_count_ft:
+          type: array
+          items:
+            type: integer
+        win_ft:
+          type: array
+          items:
+            type: string
+        ht_goals_time:
+          type: array
+          items:
+            type: array
+            items:
+              type: integer
+        at_goals_time:
+          type: array
+          items:
+            type: array
+            items:
+              type: integer
+        ht_1x2_ft_opening:
+          type: array
+          items:
+            type: number
+        ht_1x2_ft_closing:
+          type: array
+          items:
+            type: number
+        d_1x2_ft_opening:
+          type: array
+          items:
+            type: number
+        d_1x2_ft_closing:
+          type: array
+          items:
+            type: number
+        at_1x2_ft_opening:
+          type: array
+          items:
+            type: number
+        at_1x2_ft_closing:
+          type: array
+          items:
+            type: number
+        ht_1x2_1half_opening:
+          type: array
+          items:
+            type: number
+        ht_1x2_1half_closing:
+          type: array
+          items:
+            type: number
+        d_1x2_1half_opening:
+          type: array
+          items:
+            type: number
+        d_1x2_1half_closing:
+          type: array
+          items:
+            type: number
+        at_1x2_1half_opening:
+          type: array
+          items:
+            type: number
+        at_1x2_1half_closing:
+          type: array
+          items:
+            type: number
+        ht_1x2_2half_opening:
+          type: array
+          items:
+            type: number
+        ht_1x2_2half_closing:
+          type: array
+          items:
+            type: number
+        d_1x2_2half_opening:
+          type: array
+          items:
+            type: number
+        d_1x2_2half_closing:
+          type: array
+          items:
+            type: number
+        at_1x2_2half_opening:
+          type: array
+          items:
+            type: number
+        at_1x2_2half_closing:
+          type: array
+          items:
+            type: number
+        ht_ha_ft_opening:
+          type: array
+          items:
+            type: number
+        ht_ha_ft_closing:
+          type: array
+          items:
+            type: number
+        at_ha_ft_opening:
+          type: array
+          items:
+            type: number
+        at_ha_ft_closing:
+          type: array
+          items:
+            type: number
+        ht_ha_1half_opening:
+          type: array
+          items:
+            type: number
+        ht_ha_1half_closing:
+          type: array
+          items:
+            type: number
+        at_ha_1half_opening:
+          type: array
+          items:
+            type: number
+        at_ha_1half_closing:
+          type: array
+          items:
+            type: number
+        ht_ha_2half_opening:
+          type: array
+          items:
+            type: number
+        ht_ha_2half_closing:
+          type: array
+          items:
+            type: number
+        at_ha_2half_opening:
+          type: array
+          items:
+            type: number
+        at_ha_2half_closing:
+          type: array
+          items:
+            type: number
+        over_0_5_ft_opening:
+          type: array
+          items:
+            type: number
+        over_0_5_ft_closing:
+          type: array
+          items:
+            type: number
+        under_0_5_ft_opening:
+          type: array
+          items:
+            type: number
+        under_0_5_ft_closing:
+          type: array
+          items:
+            type: number
+        over_1_ft_opening:
+          type: array
+          items:
+            type: number
+        over_1_ft_closing:
+          type: array
+          items:
+            type: number
+        under_1_ft_opening:
+          type: array
+          items:
+            type: number
+        under_1_ft_closing:
+          type: array
+          items:
+            type: number
+        over_1_5_ft_opening:
+          type: array
+          items:
+            type: number
+        over_1_5_ft_closing:
+          type: array
+          items:
+            type: number
+        under_1_5_ft_opening:
+          type: array
+          items:
+            type: number
+        under_1_5_ft_closing:
+          type: array
+          items:
+            type: number
+        over_2_ft_opening:
+          type: array
+          items:
+            type: number
+        over_2_ft_closing:
+          type: array
+          items:
+            type: number
+        under_2_ft_opening:
+          type: array
+          items:
+            type: number
+        under_2_ft_closing:
+          type: array
+          items:
+            type: number
+        over_2_5_ft_opening:
+          type: array
+          items:
+            type: number
+        over_2_5_ft_closing:
+          type: array
+          items:
+            type: number
+        under_2_5_ft_opening:
+          type: array
+          items:
+            type: number
+        under_2_5_ft_closing:
+          type: array
+          items:
+            type: number
+        over_3_ft_opening:
+          type: array
+          items:
+            type: number
+        over_3_ft_closing:
+          type: array
+          items:
+            type: number
+        under_3_ft_opening:
+          type: array
+          items:
+            type: number
+        under_3_ft_closing:
+          type: array
+          items:
+            type: number
+        over_3_5_ft_opening:
+          type: array
+          items:
+            type: number
+        over_3_5_ft_closing:
+          type: array
+          items:
+            type: number
+        under_3_5_ft_opening:
+          type: array
+          items:
+            type: number
+        under_3_5_ft_closing:
+          type: array
+          items:
+            type: number
+        over_4_ft_opening:
+          type: array
+          items:
+            type: number
+        over_4_ft_closing:
+          type: array
+          items:
+            type: number
+        under_4_ft_opening:
+          type: array
+          items:
+            type: number
+        under_4_ft_closing:
+          type: array
+          items:
+            type: number
+        over_4_5_ft_opening:
+          type: array
+          items:
+            type: number
+        over_4_5_ft_closing:
+          type: array
+          items:
+            type: number
+        under_4_5_ft_opening:
+          type: array
+          items:
+            type: number
+        under_4_5_ft_closing:
+          type: array
+          items:
+            type: number
+        over_5_ft_opening:
+          type: array
+          items:
+            type: number
+        over_5_ft_closing:
+          type: array
+          items:
+            type: number
+        under_5_ft_opening:
+          type: array
+          items:
+            type: number
+        under_5_ft_closing:
+          type: array
+          items:
+            type: number
+        over_5_5_ft_opening:
+          type: array
+          items:
+            type: number
+        over_5_5_ft_closing:
+          type: array
+          items:
+            type: number
+        under_5_5_ft_opening:
+          type: array
+          items:
+            type: number
+        under_5_5_ft_closing:
+          type: array
+          items:
+            type: number
+        over_0_5_1half_opening:
+          type: array
+          items:
+            type: number
+        over_0_5_1half_closing:
+          type: array
+          items:
+            type: number
+        under_0_5_1half_opening:
+          type: array
+          items:
+            type: number
+        under_0_5_1half_closing:
+          type: array
+          items:
+            type: number
+        over_1_1half_opening:
+          type: array
+          items:
+            type: number
+        over_1_1half_closing:
+          type: array
+          items:
+            type: number
+        under_1_1half_opening:
+          type: array
+          items:
+            type: number
+        under_1_1half_closing:
+          type: array
+          items:
+            type: number
+        over_1_5_1half_opening:
+          type: array
+          items:
+            type: number
+        over_1_5_1half_closing:
+          type: array
+          items:
+            type: number
+        under_1_5_1half_opening:
+          type: array
+          items:
+            type: number
+        under_1_5_1half_closing:
+          type: array
+          items:
+            type: number
+        over_2_1half_opening:
+          type: array
+          items:
+            type: number
+        over_2_1half_closing:
+          type: array
+          items:
+            type: number
+        under_2_1half_opening:
+          type: array
+          items:
+            type: number
+        under_2_1half_closing:
+          type: array
+          items:
+            type: number
+        over_2_5_1half_opening:
+          type: array
+          items:
+            type: number
+        over_2_5_1half_closing:
+          type: array
+          items:
+            type: number
+        under_2_5_1half_opening:
+          type: array
+          items:
+            type: number
+        under_2_5_1half_closing:
+          type: array
+          items:
+            type: number
+        over_3_1half_opening:
+          type: array
+          items:
+            type: number
+        over_3_1half_closing:
+          type: array
+          items:
+            type: number
+        under_3_1half_opening:
+          type: array
+          items:
+            type: number
+        under_3_1half_closing:
+          type: array
+          items:
+            type: number
+        over_3_5_1half_opening:
+          type: array
+          items:
+            type: number
+        over_3_5_1half_closing:
+          type: array
+          items:
+            type: number
+        under_3_5_1half_opening:
+          type: array
+          items:
+            type: number
+        under_3_5_1half_closing:
+          type: array
+          items:
+            type: number
+        over_4_1half_opening:
+          type: array
+          items:
+            type: number
+        over_4_1half_closing:
+          type: array
+          items:
+            type: number
+        under_4_1half_opening:
+          type: array
+          items:
+            type: number
+        under_4_1half_closing:
+          type: array
+          items:
+            type: number
+        over_4_5_1half_opening:
+          type: array
+          items:
+            type: number
+        over_4_5_1half_closing:
+          type: array
+          items:
+            type: number
+        under_4_5_1half_opening:
+          type: array
+          items:
+            type: number
+        under_4_5_1half_closing:
+          type: array
+          items:
+            type: number
+        over_5_1half_opening:
+          type: array
+          items:
+            type: number
+        over_5_1half_closing:
+          type: array
+          items:
+            type: number
+        under_5_1half_opening:
+          type: array
+          items:
+            type: number
+        under_5_1half_closing:
+          type: array
+          items:
+            type: number
+        over_5_5_1half_opening:
+          type: array
+          items:
+            type: number
+        over_5_5_1half_closing:
+          type: array
+          items:
+            type: number
+        under_5_5_1half_opening:
+          type: array
+          items:
+            type: number
+        under_5_5_1half_closing:
+          type: array
+          items:
+            type: number
+        over_0_5_2half_opening:
+          type: array
+          items:
+            type: number
+        over_0_5_2half_closing:
+          type: array
+          items:
+            type: number
+        under_0_5_2half_opening:
+          type: array
+          items:
+            type: number
+        under_0_5_2half_closing:
+          type: array
+          items:
+            type: number
+        over_1_2half_opening:
+          type: array
+          items:
+            type: number
+        over_1_2half_closing:
+          type: array
+          items:
+            type: number
+        under_1_2half_opening:
+          type: array
+          items:
+            type: number
+        under_1_2half_closing:
+          type: array
+          items:
+            type: number
+        over_1_5_2half_opening:
+          type: array
+          items:
+            type: number
+        over_1_5_2half_closing:
+          type: array
+          items:
+            type: number
+        under_1_5_2half_opening:
+          type: array
+          items:
+            type: number
+        under_1_5_2half_closing:
+          type: array
+          items:
+            type: number
+        over_2_2half_opening:
+          type: array
+          items:
+            type: number
+        over_2_2half_closing:
+          type: array
+          items:
+            type: number
+        under_2_2half_opening:
+          type: array
+          items:
+            type: number
+        under_2_2half_closing:
+          type: array
+          items:
+            type: number
+        over_2_5_2half_opening:
+          type: array
+          items:
+            type: number
+        over_2_5_2half_closing:
+          type: array
+          items:
+            type: number
+        under_2_5_2half_opening:
+          type: array
+          items:
+            type: number
+        under_2_5_2half_closing:
+          type: array
+          items:
+            type: number
+        over_3_2half_opening:
+          type: array
+          items:
+            type: number
+        over_3_2half_closing:
+          type: array
+          items:
+            type: number
+        under_3_2half_opening:
+          type: array
+          items:
+            type: number
+        under_3_2half_closing:
+          type: array
+          items:
+            type: number
+        over_3_5_2half_opening:
+          type: array
+          items:
+            type: number
+        over_3_5_2half_closing:
+          type: array
+          items:
+            type: number
+        under_3_5_2half_opening:
+          type: array
+          items:
+            type: number
+        under_3_5_2half_closing:
+          type: array
+          items:
+            type: number
+        over_4_2half_opening:
+          type: array
+          items:
+            type: number
+        over_4_2half_closing:
+          type: array
+          items:
+            type: number
+        under_4_2half_opening:
+          type: array
+          items:
+            type: number
+        under_4_2half_closing:
+          type: array
+          items:
+            type: number
+        over_4_5_2half_opening:
+          type: array
+          items:
+            type: number
+        over_4_5_2half_closing:
+          type: array
+          items:
+            type: number
+        under_4_5_2half_opening:
+          type: array
+          items:
+            type: number
+        under_4_5_2half_closing:
+          type: array
+          items:
+            type: number
+        over_5_2half_opening:
+          type: array
+          items:
+            type: number
+        over_5_2half_closing:
+          type: array
+          items:
+            type: number
+        under_5_2half_opening:
+          type: array
+          items:
+            type: number
+        under_5_2half_closing:
+          type: array
+          items:
+            type: number
+        over_5_5_2half_opening:
+          type: array
+          items:
+            type: number
+        over_5_5_2half_closing:
+          type: array
+          items:
+            type: number
+        under_5_5_2half_opening:
+          type: array
+          items:
+            type: number
+        under_5_5_2half_closing:
+          type: array
+          items:
+            type: number
+        dc_1x_ft_opening:
+          type: array
+          items:
+            type: number
+        dc_1x_ft_closing:
+          type: array
+          items:
+            type: number
+        dc_12_ft_opening:
+          type: array
+          items:
+            type: number
+        dc_12_ft_closing:
+          type: array
+          items:
+            type: number
+        dc_x2_ft_opening:
+          type: array
+          items:
+            type: number
+        dc_x2_ft_closing:
+          type: array
+          items:
+            type: number
+        dc_1x_1half_opening:
+          type: array
+          items:
+            type: number
+        dc_1x_1half_closing:
+          type: array
+          items:
+            type: number
+        dc_12_1half_opening:
+          type: array
+          items:
+            type: number
+        dc_12_1half_closing:
+          type: array
+          items:
+            type: number
+        dc_x2_1half_opening:
+          type: array
+          items:
+            type: number
+        dc_x2_1half_closing:
+          type: array
+          items:
+            type: number
+        dc_1x_2half_opening:
+          type: array
+          items:
+            type: number
+        dc_1x_2half_closing:
+          type: array
+          items:
+            type: number
+        dc_12_2half_opening:
+          type: array
+          items:
+            type: number
+        dc_12_2half_closing:
+          type: array
+          items:
+            type: number
+        dc_x2_2half_opening:
+          type: array
+          items:
+            type: number
+        dc_x2_2half_closing:
+          type: array
+          items:
+            type: number
+        htft_1_1_opening:
+          type: array
+          items:
+            type: number
+        htft_1_1_closing:
+          type: array
+          items:
+            type: number
+        htft_1_x_opening:
+          type: array
+          items:
+            type: number
+        htft_1_x_closing:
+          type: array
+          items:
+            type: number
+        htft_1_2_opening:
+          type: array
+          items:
+            type: number
+        htft_1_2_closing:
+          type: array
+          items:
+            type: number
+        htft_x_1_opening:
+          type: array
+          items:
+            type: number
+        htft_x_1_closing:
+          type: array
+          items:
+            type: number
+        htft_x_x_opening:
+          type: array
+          items:
+            type: number
+        htft_x_x_closing:
+          type: array
+          items:
+            type: number
+        htft_x_2_opening:
+          type: array
+          items:
+            type: number
+        htft_x_2_closing:
+          type: array
+          items:
+            type: number
+        htft_2_1_opening:
+          type: array
+          items:
+            type: number
+        htft_2_1_closing:
+          type: array
+          items:
+            type: number
+        htft_2_x_opening:
+          type: array
+          items:
+            type: number
+        htft_2_x_closing:
+          type: array
+          items:
+            type: number
+        htft_2_2_opening:
+          type: array
+          items:
+            type: number
+        htft_2_2_closing:
+          type: array
+          items:
+            type: number
+        cs_6_6_opening:
+          type: array
+          items:
+            type: number
+        cs_6_6_closing:
+          type: array
+          items:
+            type: number
+        cs_6_5_opening:
+          type: array
+          items:
+            type: number
+        cs_6_5_closing:
+          type: array
+          items:
+            type: number
+        cs_6_4_opening:
+          type: array
+          items:
+            type: number
+        cs_6_4_closing:
+          type: array
+          items:
+            type: number
+        cs_6_3_opening:
+          type: array
+          items:
+            type: number
+        cs_6_3_closing:
+          type: array
+          items:
+            type: number
+        cs_6_2_opening:
+          type: array
+          items:
+            type: number
+        cs_6_2_closing:
+          type: array
+          items:
+            type: number
+        cs_6_1_opening:
+          type: array
+          items:
+            type: number
+        cs_6_1_closing:
+          type: array
+          items:
+            type: number
+        cs_6_0_opening:
+          type: array
+          items:
+            type: number
+        cs_6_0_closing:
+          type: array
+          items:
+            type: number
+        cs_5_6_opening:
+          type: array
+          items:
+            type: number
+        cs_5_6_closing:
+          type: array
+          items:
+            type: number
+        cs_5_5_opening:
+          type: array
+          items:
+            type: number
+        cs_5_5_closing:
+          type: array
+          items:
+            type: number
+        cs_5_4_opening:
+          type: array
+          items:
+            type: number
+        cs_5_4_closing:
+          type: array
+          items:
+            type: number
+        cs_5_3_opening:
+          type: array
+          items:
+            type: number
+        cs_5_3_closing:
+          type: array
+          items:
+            type: number
+        cs_5_2_opening:
+          type: array
+          items:
+            type: number
+        cs_5_2_closing:
+          type: array
+          items:
+            type: number
+        cs_5_1_opening:
+          type: array
+          items:
+            type: number
+        cs_5_1_closing:
+          type: array
+          items:
+            type: number
+        cs_5_0_opening:
+          type: array
+          items:
+            type: number
+        cs_5_0_closing:
+          type: array
+          items:
+            type: number
+        cs_4_6_opening:
+          type: array
+          items:
+            type: number
+        cs_4_6_closing:
+          type: array
+          items:
+            type: number
+        cs_4_5_opening:
+          type: array
+          items:
+            type: number
+        cs_4_5_closing:
+          type: array
+          items:
+            type: number
+        cs_4_4_opening:
+          type: array
+          items:
+            type: number
+        cs_4_4_closing:
+          type: array
+          items:
+            type: number
+        cs_4_3_opening:
+          type: array
+          items:
+            type: number
+        cs_4_3_closing:
+          type: array
+          items:
+            type: number
+        cs_4_2_opening:
+          type: array
+          items:
+            type: number
+        cs_4_2_closing:
+          type: array
+          items:
+            type: number
+        cs_4_1_opening:
+          type: array
+          items:
+            type: number
+        cs_4_1_closing:
+          type: array
+          items:
+            type: number
+        cs_4_0_opening:
+          type: array
+          items:
+            type: number
+        cs_4_0_closing:
+          type: array
+          items:
+            type: number
+        cs_3_6_opening:
+          type: array
+          items:
+            type: number
+        cs_3_6_closing:
+          type: array
+          items:
+            type: number
+        cs_3_5_opening:
+          type: array
+          items:
+            type: number
+        cs_3_5_closing:
+          type: array
+          items:
+            type: number
+        cs_3_4_opening:
+          type: array
+          items:
+            type: number
+        cs_3_4_closing:
+          type: array
+          items:
+            type: number
+        cs_3_3_opening:
+          type: array
+          items:
+            type: number
+        cs_3_3_closing:
+          type: array
+          items:
+            type: number
+        cs_3_2_opening:
+          type: array
+          items:
+            type: number
+        cs_3_2_closing:
+          type: array
+          items:
+            type: number
+        cs_3_1_opening:
+          type: array
+          items:
+            type: number
+        cs_3_1_closing:
+          type: array
+          items:
+            type: number
+        cs_3_0_opening:
+          type: array
+          items:
+            type: number
+        cs_3_0_closing:
+          type: array
+          items:
+            type: number
+        cs_2_6_opening:
+          type: array
+          items:
+            type: number
+        cs_2_6_closing:
+          type: array
+          items:
+            type: number
+        cs_2_5_opening:
+          type: array
+          items:
+            type: number
+        cs_2_5_closing:
+          type: array
+          items:
+            type: number
+        cs_2_4_opening:
+          type: array
+          items:
+            type: number
+        cs_2_4_closing:
+          type: array
+          items:
+            type: number
+        cs_2_3_opening:
+          type: array
+          items:
+            type: number
+        cs_2_3_closing:
+          type: array
+          items:
+            type: number
+        cs_2_2_opening:
+          type: array
+          items:
+            type: number
+        cs_2_2_closing:
+          type: array
+          items:
+            type: number
+        cs_2_1_opening:
+          type: array
+          items:
+            type: number
+        cs_2_1_closing:
+          type: array
+          items:
+            type: number
+        cs_2_0_opening:
+          type: array
+          items:
+            type: number
+        cs_2_0_closing:
+          type: array
+          items:
+            type: number
+        cs_1_6_opening:
+          type: array
+          items:
+            type: number
+        cs_1_6_closing:
+          type: array
+          items:
+            type: number
+        cs_1_5_opening:
+          type: array
+          items:
+            type: number
+        cs_1_5_closing:
+          type: array
+          items:
+            type: number
+        cs_1_4_opening:
+          type: array
+          items:
+            type: number
+        cs_1_4_closing:
+          type: array
+          items:
+            type: number
+        cs_1_3_opening:
+          type: array
+          items:
+            type: number
+        cs_1_3_closing:
+          type: array
+          items:
+            type: number
+        cs_1_2_opening:
+          type: array
+          items:
+            type: number
+        cs_1_2_closing:
+          type: array
+          items:
+            type: number
+        cs_1_1_opening:
+          type: array
+          items:
+            type: number
+        cs_1_1_closing:
+          type: array
+          items:
+            type: number
+        cs_1_0_opening:
+          type: array
+          items:
+            type: number
+        cs_1_0_closing:
+          type: array
+          items:
+            type: number
+        cs_0_0_opening:
+          type: array
+          items:
+            type: number
+        cs_0_0_closing:
+          type: array
+          items:
+            type: number
+        cs_0_6_opening:
+          type: array
+          items:
+            type: number
+        cs_0_6_closing:
+          type: array
+          items:
+            type: number
+        cs_0_5_opening:
+          type: array
+          items:
+            type: number
+        cs_0_5_closing:
+          type: array
+          items:
+            type: number
+        cs_0_4_opening:
+          type: array
+          items:
+            type: number
+        cs_0_4_closing:
+          type: array
+          items:
+            type: number
+        cs_0_3_opening:
+          type: array
+          items:
+            type: number
+        cs_0_3_closing:
+          type: array
+          items:
+            type: number
+        cs_0_2_opening:
+          type: array
+          items:
+            type: number
+        cs_0_2_closing:
+          type: array
+          items:
+            type: number
+        cs_0_1_opening:
+          type: array
+          items:
+            type: number
+        cs_0_1_closing:
+          type: array
+          items:
+            type: number
+        odd_ft_opening:
+          type: array
+          items:
+            type: number
+        odd_ft_closing:
+          type: array
+          items:
+            type: number
+        even_ft_opening:
+          type: array
+          items:
+            type: number
+        even_ft_closing:
+          type: array
+          items:
+            type: number
+        odd_1half_opening:
+          type: array
+          items:
+            type: number
+        odd_1half_closing:
+          type: array
+          items:
+            type: number
+        even_1half_opening:
+          type: array
+          items:
+            type: number
+        even_1half_closing:
+          type: array
+          items:
+            type: number
+        odd_2half_opening:
+          type: array
+          items:
+            type: number
+        odd_2half_closing:
+          type: array
+          items:
+            type: number
+        even_2half_opening:
+          type: array
+          items:
+            type: number
+        even_2half_closing:
+          type: array
+          items:
+            type: number
+        bts_yes_ft_opening:
+          type: array
+          items:
+            type: number
+        bts_yes_ft_closing:
+          type: array
+          items:
+            type: number
+        bts_no_ft_opening:
+          type: array
+          items:
+            type: number
+        bts_no_ft_closing:
+          type: array
+          items:
+            type: number
+        bts_yes_1half_opening:
+          type: array
+          items:
+            type: number
+        bts_yes_1half_closing:
+          type: array
+          items:
+            type: number
+        bts_no_1half_opening:
+          type: array
+          items:
+            type: number
+        bts_no_1half_closing:
+          type: array
+          items:
+            type: number
+        bts_yes_2half_opening:
+          type: array
+          items:
+            type: number
+        bts_yes_2half_closing:
+          type: array
+          items:
+            type: number
+        bts_no_2half_opening:
+          type: array
+          items:
+            type: number
+        bts_no_2half_closing:
+          type: array
+          items:
+            type: number
+        yellow_card_ht:
+          type: array
+          items:
+            type: integer
+        yellow_card_at:
+          type: array
+          items:
+            type: integer
+        red_card_ht:
+          type: array
+          items:
+            type: integer
+        red_card_at:
+          type: array
+          items:
+            type: integer
+        corner_kicks_ht:
+          type: array
+          items:
+            type: integer
+        corner_kicks_at:
+          type: array
+          items:
+            type: integer
+    ErrorModel:
+      type: object
+      required:
+      - message
+      - code
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          minimum: 100
+          maximum: 600
+
+

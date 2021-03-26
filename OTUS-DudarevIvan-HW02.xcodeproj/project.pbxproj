@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,11 @@
 		D1F129AA260D987500161270 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F129A9260D987500161270 /* ContentView.swift */; };
 		D1F129AC260D987600161270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1F129AB260D987600161270 /* Assets.xcassets */; };
 		D1F129AF260D987600161270 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1F129AE260D987600161270 /* Preview Assets.xcassets */; };
+		D1F129BE260D99A200161270 /* football.yaml in Resources */ = {isa = PBXBuildFile; fileRef = D1F129BA260D99A200161270 /* football.yaml */; };
+		D1F129BF260D99A200161270 /* footballArchive.yaml in Resources */ = {isa = PBXBuildFile; fileRef = D1F129BB260D99A200161270 /* footballArchive.yaml */; };
+		D1F129C0260D99A200161270 /* generateArchive.sh in Resources */ = {isa = PBXBuildFile; fileRef = D1F129BC260D99A200161270 /* generateArchive.sh */; };
+		D1F129C1260D99A200161270 /* generateFootball.sh in Resources */ = {isa = PBXBuildFile; fileRef = D1F129BD260D99A200161270 /* generateFootball.sh */; };
+		D1F129C5260D9B4900161270 /* FootballNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = D1F129C4260D9B4900161270 /* FootballNetworking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,11 @@
 		D1F129AB260D987600161270 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1F129AE260D987600161270 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D1F129B0260D987600161270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1F129B8260D994E00161270 /* FootballNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FootballNetworking; sourceTree = "<group>"; };
+		D1F129BA260D99A200161270 /* football.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = football.yaml; sourceTree = "<group>"; };
+		D1F129BB260D99A200161270 /* footballArchive.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = footballArchive.yaml; sourceTree = "<group>"; };
+		D1F129BC260D99A200161270 /* generateArchive.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generateArchive.sh; sourceTree = "<group>"; };
+		D1F129BD260D99A200161270 /* generateFootball.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generateFootball.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1F129C5260D9B4900161270 /* FootballNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,9 +47,14 @@
 		D1F1299B260D987500161270 = {
 			isa = PBXGroup;
 			children = (
+				D1F129BA260D99A200161270 /* football.yaml */,
+				D1F129BB260D99A200161270 /* footballArchive.yaml */,
+				D1F129BC260D99A200161270 /* generateArchive.sh */,
+				D1F129BD260D99A200161270 /* generateFootball.sh */,
 				D1F129B7260D988600161270 /* Modules */,
 				D1F129A6260D987500161270 /* OTUS-DudarevIvan-HW02 */,
 				D1F129A5260D987500161270 /* Products */,
+				D1F129C3260D9B4900161270 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,8 +89,16 @@
 		D1F129B7260D988600161270 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D1F129B8260D994E00161270 /* FootballNetworking */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		D1F129C3260D9B4900161270 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,6 +117,9 @@
 			dependencies = (
 			);
 			name = "OTUS-DudarevIvan-HW02";
+			packageProductDependencies = (
+				D1F129C4260D9B4900161270 /* FootballNetworking */,
+			);
 			productName = "OTUS-DudarevIvan-HW02";
 			productReference = D1F129A4260D987500161270 /* OTUS-DudarevIvan-HW02.app */;
 			productType = "com.apple.product-type.application";
@@ -136,6 +163,10 @@
 			files = (
 				D1F129AF260D987600161270 /* Preview Assets.xcassets in Resources */,
 				D1F129AC260D987600161270 /* Assets.xcassets in Resources */,
+				D1F129C1260D99A200161270 /* generateFootball.sh in Resources */,
+				D1F129BF260D99A200161270 /* footballArchive.yaml in Resources */,
+				D1F129BE260D99A200161270 /* football.yaml in Resources */,
+				D1F129C0260D99A200161270 /* generateArchive.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +367,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D1F129C4260D9B4900161270 /* FootballNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FootballNetworking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D1F1299C260D987500161270 /* Project object */;
 }
