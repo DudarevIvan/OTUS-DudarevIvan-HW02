@@ -19,9 +19,9 @@ paths:
       summary: Get Archive
       operationId: getFootballArchive
       parameters:
-        - name: url
+        - name: urlArchive
           in: query
-          description: Archive
+          description: urlArchive
           required: true
           schema:
             type: string
