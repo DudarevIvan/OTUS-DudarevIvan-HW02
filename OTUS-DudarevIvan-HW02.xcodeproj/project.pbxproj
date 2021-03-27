@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D19BD195260DB45300B3FEB8 /* FootballNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = D19BD194260DB45300B3FEB8 /* FootballNetworking */; };
 		D19BD19A260DB5FC00B3FEB8 /* ArchiveNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = D19BD199260DB5FC00B3FEB8 /* ArchiveNetworking */; };
+		D19BD1AD260F8F6400B3FEB8 /* ImageNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = D19BD1AC260F8F6400B3FEB8 /* ImageNetworking */; };
 		D1F129A8260D987500161270 /* OTUS_DudarevIvan_HW02App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F129A7260D987500161270 /* OTUS_DudarevIvan_HW02App.swift */; };
 		D1F129AA260D987500161270 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F129A9260D987500161270 /* ContentView.swift */; };
 		D1F129AC260D987600161270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1F129AB260D987600161270 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		D19BD197260DB53700B3FEB8 /* ArchiveNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ArchiveNetworking; sourceTree = "<group>"; };
+		D19BD1A9260F8F3300B3FEB8 /* ImageNetworking */ = {isa = PBXFileReference; lastKnownFileType = text; name = ImageNetworking; path = Modules/ImageNetworking; sourceTree = SOURCE_ROOT; };
 		D1F129A4260D987500161270 /* OTUS-DudarevIvan-HW02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OTUS-DudarevIvan-HW02.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F129A7260D987500161270 /* OTUS_DudarevIvan_HW02App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTUS_DudarevIvan_HW02App.swift; sourceTree = "<group>"; };
 		D1F129A9260D987500161270 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 			files = (
 				D19BD195260DB45300B3FEB8 /* FootballNetworking in Frameworks */,
 				D19BD19A260DB5FC00B3FEB8 /* ArchiveNetworking in Frameworks */,
+				D19BD1AD260F8F6400B3FEB8 /* ImageNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +97,7 @@
 			children = (
 				D19BD197260DB53700B3FEB8 /* ArchiveNetworking */,
 				D1F129B8260D994E00161270 /* FootballNetworking */,
+				D19BD1A9260F8F3300B3FEB8 /* ImageNetworking */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -124,6 +128,7 @@
 			packageProductDependencies = (
 				D19BD194260DB45300B3FEB8 /* FootballNetworking */,
 				D19BD199260DB5FC00B3FEB8 /* ArchiveNetworking */,
+				D19BD1AC260F8F6400B3FEB8 /* ImageNetworking */,
 			);
 			productName = "OTUS-DudarevIvan-HW02";
 			productReference = D1F129A4260D987500161270 /* OTUS-DudarevIvan-HW02.app */;
@@ -381,6 +386,10 @@
 		D19BD199260DB5FC00B3FEB8 /* ArchiveNetworking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ArchiveNetworking;
+		};
+		D19BD1AC260F8F6400B3FEB8 /* ImageNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ImageNetworking;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
