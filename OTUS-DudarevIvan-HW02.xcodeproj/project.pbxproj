@@ -10,6 +10,8 @@
 		D19BD195260DB45300B3FEB8 /* FootballNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = D19BD194260DB45300B3FEB8 /* FootballNetworking */; };
 		D19BD19A260DB5FC00B3FEB8 /* ArchiveNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = D19BD199260DB5FC00B3FEB8 /* ArchiveNetworking */; };
 		D19BD1AD260F8F6400B3FEB8 /* ImageNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = D19BD1AC260F8F6400B3FEB8 /* ImageNetworking */; };
+		D19BD1BF260FC51000B3FEB8 /* LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BD1BE260FC51000B3FEB8 /* LoadImage.swift */; };
+		D19BD1C4260FC65800B3FEB8 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BD1C3260FC65800B3FEB8 /* CountryCell.swift */; };
 		D1F129A8260D987500161270 /* OTUS_DudarevIvan_HW02App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F129A7260D987500161270 /* OTUS_DudarevIvan_HW02App.swift */; };
 		D1F129AA260D987500161270 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F129A9260D987500161270 /* ContentView.swift */; };
 		D1F129AC260D987600161270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1F129AB260D987600161270 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		D19BD197260DB53700B3FEB8 /* ArchiveNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ArchiveNetworking; sourceTree = "<group>"; };
 		D19BD1A9260F8F3300B3FEB8 /* ImageNetworking */ = {isa = PBXFileReference; lastKnownFileType = text; name = ImageNetworking; path = Modules/ImageNetworking; sourceTree = SOURCE_ROOT; };
+		D19BD1BE260FC51000B3FEB8 /* LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImage.swift; sourceTree = "<group>"; };
+		D19BD1C3260FC65800B3FEB8 /* CountryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		D1F129A4260D987500161270 /* OTUS-DudarevIvan-HW02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OTUS-DudarevIvan-HW02.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F129A7260D987500161270 /* OTUS_DudarevIvan_HW02App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTUS_DudarevIvan_HW02App.swift; sourceTree = "<group>"; };
 		D1F129A9260D987500161270 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +54,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D19BD1B4260FC27D00B3FEB8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D19BD1BE260FC51000B3FEB8 /* LoadImage.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D19BD1C2260FC64800B3FEB8 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D19BD1C3260FC65800B3FEB8 /* CountryCell.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
 		D1F1299B260D987500161270 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +95,8 @@
 		D1F129A6260D987500161270 /* OTUS-DudarevIvan-HW02 */ = {
 			isa = PBXGroup;
 			children = (
+				D19BD1C2260FC64800B3FEB8 /* UIComponents */,
+				D19BD1B4260FC27D00B3FEB8 /* ViewModels */,
 				D1F129A7260D987500161270 /* OTUS_DudarevIvan_HW02App.swift */,
 				D1F129A9260D987500161270 /* ContentView.swift */,
 				D1F129AB260D987600161270 /* Assets.xcassets */,
@@ -187,6 +209,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D19BD1C4260FC65800B3FEB8 /* CountryCell.swift in Sources */,
+				D19BD1BF260FC51000B3FEB8 /* LoadImage.swift in Sources */,
 				D1F129AA260D987500161270 /* ContentView.swift in Sources */,
 				D1F129A8260D987500161270 /* OTUS_DudarevIvan_HW02App.swift in Sources */,
 			);

@@ -6,57 +6,22 @@
 //
 
 import SwiftUI
-
-import SwiftUI
 import FootballNetworking
-import ArchiveNetworking
-import ImageNetworking
+//import ArchiveNetworking
 
 struct ContentView: View {
     
     @ObservedObject var footballViewModel: FootballViewModel = .init()
     @ObservedObject var archiveViewModel: ArchiveViewModel = .init()
-    
+        
     var body: some View {
-        VStack {
+        ZStack {
             List(footballViewModel.items) { country in
-                CountryCell(name: country.name!, imageUrl: country.flag!)
-            }
-            //            if !footballViewModel.items.isEmpty {
-            //                Text(footballViewModel.items.first!.name!)
-            //                    .onAppear() { archiveViewModel.loadPage(url: footballViewModel.items.first!.leagues!.first!.seasons!.first!.archive!, page: 1)
-            //                    }
-            //            } else {
-            //                EmptyView()
-            //            }
-            //            Text(archiveViewModel.items.ht?.first ?? "s")
-        }
-    }
-}
-
-struct CountryCell: View {
-    
-    @ObservedObject var loadImage: LoadImage = .init()
-    
-    let name: String
-    let imageUrl: String
-    
-    var body: some View {
-        HStack {
-            Text(name).onAppear() {
-                loadImage.fetchData(from: imageUrl)
-            }
-            Spacer()
-            if loadImage.image != nil {
-            loadImage.image!
-                .resizable()
-                .scaledToFit()
-                .aspectRatio(CGSize(width: 3, height: 2), contentMode: .fill)
-                .frame(width: 60, height: 40)
-            } else {
-                EmptyView()
+                CountryCell(name: country.name!, imageUrl: country.flag!, leaguesCount: country.leagues!.count)
+                    
             }
         }
+        .ignoresSafeArea()
     }
 }
 
@@ -105,24 +70,5 @@ final class ArchiveViewModel: ObservableObject {
     }
 }
 
-final class LoadImage: ObservableObject {
-    
-    @Published var image: Image?
-    
-    func fetchData(from url: String) {
-        NetworkImage.shared.loadImage(url) { (result: Result<Data, Error>) in
-            switch result {
-            case .success(let data):
-                DispatchQueue.main.async {
-                    self.image = Image(uiImage: UIImage(data: data)!)
-                }
-            case.failure(let error):
-                DispatchQueue.main.async {
-                    print(error)
-                }
-            }
-        }
-    }
-    
-}
+
 

@@ -12,6 +12,7 @@ struct OTUS_DudarevIvan_HW02App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                //.environment(\.colorScheme, .dark)
         }
     }
 }
