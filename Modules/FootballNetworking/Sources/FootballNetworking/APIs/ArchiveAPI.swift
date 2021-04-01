@@ -29,14 +29,15 @@ open class ArchiveAPI {
 
     /**
      Get Archive
-     - GET /api/
+     - GET /api/archive
      - parameter urlArchive: (query) urlArchive 
      - parameter page: (query) Paging 
      - returns: RequestBuilder<Archive> 
      */
     open class func getFootballArchiveWithRequestBuilder(urlArchive: String, page: Int) -> RequestBuilder<Archive> {
         let path = urlArchive + "_" + String(page)
-        let URLString = OpenAPIClientAPI.basePath + path
+        let URLString = path //OpenAPIClientAPI.basePath + path
+        print(path)
         let parameters: [String: Any]? = nil
 
         var url = URLComponents(string: URLString)

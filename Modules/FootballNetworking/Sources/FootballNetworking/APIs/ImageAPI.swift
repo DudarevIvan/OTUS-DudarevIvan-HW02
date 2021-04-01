@@ -1,8 +1,15 @@
+//
+//  File.swift
+//  
+//
+//  Created by Ivan Dudarev on 3/31/21.
+//
+
 import Foundation
    
-public class NetworkImage {
+public class ImageAPI {
     
-    public static let shared: NetworkImage = .init()
+    public static let shared: ImageAPI = .init()
     
     // Generic function for return data(use example - Image)
     public func loadImage(_ url: String, completion: @escaping (Result<Data, Error>) -> ()) {

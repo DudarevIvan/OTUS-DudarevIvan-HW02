@@ -11,8 +11,8 @@ import SwiftUI
 struct OTUS_DudarevIvan_HW02App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                //.environment(\.colorScheme, .dark)
+            SportsScreen()
+                .background(Color(red: 104.0/255, green: 101.0/255, blue: 107.0/255)).ignoresSafeArea()
         }
     }
 }

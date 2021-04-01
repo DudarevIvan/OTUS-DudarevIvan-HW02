@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Seasons: Codable {
+public struct Seasons: Codable, Identifiable {
 
     public var id: Int?
     public var season: String?

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Leagues: Codable {
+public struct Leagues: Codable, Identifiable {
 
     public var id: Int?
     public var name: String?

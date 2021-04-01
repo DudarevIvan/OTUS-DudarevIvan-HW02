@@ -8,12 +8,12 @@
 import SwiftUI
 import FootballNetworking
 
-final class LoadImage: ObservableObject {
+final class ImageViewModel: ObservableObject {
     
     @Published var image: Image?
     
     func fetchData(from url: String) {
-        NetworkImage.shared.loadImage(url) { (result: Result<Data, Error>) in
+        ImageAPI.shared.loadImage(url) { (result: Result<Data, Error>) in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {

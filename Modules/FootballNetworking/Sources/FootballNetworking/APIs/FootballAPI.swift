@@ -27,11 +27,12 @@ open class FootballAPI {
 
     /**
      Get Football List
-     - GET /api/
+     - GET /api
      - returns: RequestBuilder<Football> 
      */
     open class func getFootballListWithRequestBuilder() -> RequestBuilder<Football> {
-        let URLString = OpenAPIClientAPI.basePath
+        let path = "/main"
+        let URLString = OpenAPIClientAPI.basePath + path
         let parameters: [String: Any]? = nil
 
         let url = URLComponents(string: URLString)
